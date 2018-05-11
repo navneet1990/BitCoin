@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CoinEntity" representedClassName="CoinEntity" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rate" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parentCurrency" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Currencny" inverseName="coin" inverseEntity="Currencny" syncable="YES"/>
+    </entity>
+    <entity name="Currencny" representedClassName="Currencny" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="coin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoinEntity" inverseName="parentCurrency" inverseEntity="CoinEntity" syncable="YES"/>
+    </entity>
+    <entity name="TodayEntity" representedClassName="TodayEntity" syncable="YES">
+        <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectedCurrency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="currencies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Currencny" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CoinEntity" positionX="-342" positionY="-28" width="128" height="88"/>
+        <element name="Currencny" positionX="-297" positionY="-144" width="128" height="73"/>
+        <element name="TodayEntity" positionX="-333" positionY="-324" width="128" height="103"/>
+    </elements>
+</model>

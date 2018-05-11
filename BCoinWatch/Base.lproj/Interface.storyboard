@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s97-Y8-a32">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+    </dependencies>
+    <scenes>
+        <!--Bit Coin-->
+        <scene sceneID="pk7-yh-e4W">
+            <objects>
+                <controller identifier="todaySegue" title="Bit Coin" fullScreen="YES" id="s97-Y8-a32" customClass="InterfaceController" customModule="BCoinWatch_Extension">
+                    <items>
+                        <label alignment="center" text="Today" textAlignment="center" numberOfLines="0" id="w6p-q2-Par">
+                            <color key="textColor" red="0.85147621549999997" green="0.24595056770000001" blue="0.1227118973" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <group width="1" alignment="center" id="zac-dr-u6i">
+                            <items>
+                                <button width="45" height="1" alignment="left" title="€" id="H22-JD-PkN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.85147621549999997" green="0.24595056770000001" blue="0.1227118973" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="euroBtnAction" destination="s97-Y8-a32" id="F9J-TT-KhW"/>
+                                    </connections>
+                                </button>
+                                <button width="45" alignment="center" title="$" id="Wi2-T0-rGs">
+                                    <color key="titleColor" red="0.85147621549999997" green="0.24595056770000001" blue="0.1227118973" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="dollarBtnAction" destination="s97-Y8-a32" id="Juk-ay-ACq"/>
+                                    </connections>
+                                </button>
+                                <button width="45" alignment="right" title="£" id="eIg-Wh-wIP">
+                                    <color key="titleColor" red="0.85147621549999997" green="0.24595056770000001" blue="0.1227118973" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="poundBtnAction" destination="s97-Y8-a32" id="o8I-kA-5At"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label width="136" alignment="left" text="date" textAlignment="center" id="ahC-iA-0s7">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="136" height="29" alignment="center" verticalAlignment="center" text="$8,221.4550" textAlignment="center" id="Nf9-l6-Dpd">
+                            <fontDescription key="font" type="system" weight="medium" pointSize="17"/>
+                        </label>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Last Two Weeks" id="ThG-hs-EuK">
+                            <color key="titleColor" red="0.85147621549999997" green="0.24595056770000001" blue="0.1227118973" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                            <connections>
+                                <segue destination="26b-5r-cMu" kind="push" identifier="twoWeeksSegue" id="aro-EA-XSh"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="dateLbl" destination="ahC-iA-0s7" id="Xkn-hr-PGq"/>
+                        <outlet property="dollarBtn" destination="Wi2-T0-rGs" id="Lam-0i-rfd"/>
+                        <outlet property="euroBtn" destination="H22-JD-PkN" id="f4c-LM-7SD"/>
+                        <outlet property="poundBtn" destination="eIg-Wh-wIP" id="PsV-fz-TeQ"/>
+                        <outlet property="rateLbl" destination="Nf9-l6-Dpd" id="yxd-Ph-kqa"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Earlier-->
+        <scene sceneID="TEt-Cu-X3B">
+            <objects>
+                <controller identifier="twoWeeksSegue" title="Earlier" fullScreen="YES" id="26b-5r-cMu" customClass="BTwoWeeksInterfaceController" customModule="BCoinWatch_Extension">
+                    <items>
+                        <label alignment="center" text="Last Two Weeks" textAlignment="center" id="fMI-zh-iug">
+                            <color key="textColor" red="0.85147621549999997" green="0.24595056770000001" blue="0.1227118973" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <table alignment="center" id="WY9-NB-lyf">
+                            <items>
+                                <tableRow identifier="oldRateCoin" id="9wm-YP-iVj" customClass="TwoWeeksRowController" customModule="BCoinWatch_Extension">
+                                    <group key="rootItem" width="1" height="40" alignment="left" layout="vertical" id="s4U-JL-5g2">
+                                        <items>
+                                            <label alignment="left" text="Label" textAlignment="left" id="4cp-Pz-x1m">
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                            <label alignment="left" text="Date" id="0Wx-lb-GML">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dateLbl" destination="0Wx-lb-GML" id="9Qf-h5-7qo"/>
+                                        <outlet property="rateLbl" destination="4cp-Pz-x1m" id="Avb-ov-S4j"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="coinsTable" destination="WY9-NB-lyf" id="zcr-rO-ALa"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="547" y="349"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</document>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="CoinTodayExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Current Bitcoin Rate" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
+                                <rect key="frame" x="79.5" y="10" width="161.5" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Last updated:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOs-Xb-IIj">
+                                <rect key="frame" x="118.5" y="35.5" width="83.5" height="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlw-cZ-Stc">
+                                <rect key="frame" x="0.0" y="56.5" width="320" height="60.5"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
+                                <color key="textColor" red="0.85147621549999997" green="0.24595056770000001" blue="0.1227118973" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JLk-qY-KIN">
+                                <rect key="frame" x="0.0" y="122" width="320" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="55n-38-hBe"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="EUR"/>
+                                    <segment title="USD"/>
+                                    <segment title="GBP"/>
+                                </segments>
+                                <color key="tintColor" red="0.85147621549999997" green="0.24595056770000001" blue="0.1227118973" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentAction:" destination="M4Y-Lb-cyx" eventType="valueChanged" id="tFP-AX-bbz"/>
+                                </connections>
+                            </segmentedControl>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SNL-fb-QJ2">
+                                <rect key="frame" x="16" y="10" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fax-ZS-6Ek">
+                                <rect key="frame" x="246" y="5" width="72" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kxZ-Kj-zpA"/>
+                                </constraints>
+                                <state key="normal" title="Referesh"/>
+                                <connections>
+                                    <action selector="refreshAction:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="YGa-zD-41n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="nlw-cZ-Stc" secondAttribute="trailing" id="3AT-t8-wJw"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="fax-ZS-6Ek" secondAttribute="trailing" constant="2" id="5lI-w8-22i"/>
+                            <constraint firstItem="JLk-qY-KIN" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="ARh-ad-uOA"/>
+                            <constraint firstItem="nlw-cZ-Stc" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="Arj-IG-9jM"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="EHp-Ez-594"/>
+                            <constraint firstItem="NOs-Xb-IIj" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="5" id="W0W-0v-ovz"/>
+                            <constraint firstItem="JLk-qY-KIN" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="Xaz-Is-Epe"/>
+                            <constraint firstItem="SNL-fb-QJ2" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="10" id="Zsp-ZA-Lv6"/>
+                            <constraint firstItem="NOs-Xb-IIj" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="aih-Vp-oGv"/>
+                            <constraint firstItem="JLk-qY-KIN" firstAttribute="top" secondItem="nlw-cZ-Stc" secondAttribute="bottom" constant="5" id="do0-JH-vrk"/>
+                            <constraint firstItem="nlw-cZ-Stc" firstAttribute="top" secondItem="NOs-Xb-IIj" secondAttribute="bottom" constant="5" id="g8p-Wy-nDK"/>
+                            <constraint firstItem="fax-ZS-6Ek" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="5" id="jaX-PO-0YC"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="10" id="mYS-Cv-VNx"/>
+                            <constraint firstItem="SNL-fb-QJ2" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="16" id="pXz-K9-YTK"/>
+                            <constraint firstItem="fax-ZS-6Ek" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="5" id="vYY-PY-7ST"/>
+                            <constraint firstAttribute="trailing" secondItem="JLk-qY-KIN" secondAttribute="trailing" id="zNN-nJ-O5Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="150"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="SNL-fb-QJ2" id="YlI-Rt-Eto"/>
+                        <outlet property="dateLbl" destination="NOs-Xb-IIj" id="Sfx-p6-hef"/>
+                        <outlet property="rateLbl" destination="nlw-cZ-Stc" id="z1t-YL-kPz"/>
+                        <outlet property="segmentControl" destination="JLk-qY-KIN" id="OxI-tu-UsS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
